@@ -1,35 +1,32 @@
-// Enhanced Portfolio JavaScript with Smooth Animations
+/**
+ * Yajjyu Tuladhar Portfolio — script.js
+ * Modules: smooth scroll · mobile nav · scroll reveal · navbar shadow · contact form · footer year
+ */
 (function () {
   'use strict';
 
-  // ==================== SMOOTH SCROLLING ====================
-  const nav = document.querySelector('.navbar');
-  const getOffset = () => (nav ? nav.offsetHeight : 0);
-  const scrollLinks = document.querySelectorAll('nav a[href^="#"], .scroll-down[href^="#"]');
+  /* ===== SMOOTH SCROLLING ===== */
+  const navbar = document.querySelector('.navbar');
+  const navHeight = () => (navbar ? navbar.offsetHeight : 0);
 
-  function smoothScrollTo(e) {
-    const targetId = this.getAttribute('href');
-    if (!targetId || targetId === '#') return;
-    
-    const targetEl = document.querySelector(targetId);
-    if (!targetEl) return;
-    
-    e.preventDefault();
-    const topPosition = targetEl.getBoundingClientRect().top + window.scrollY - getOffset();
-    
-    window.scrollTo({
-      top: topPosition,
-      behavior: 'smooth'
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const id = this.getAttribute('href');
+      if (!id || id === '#') return;
+
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight();
+      window.scrollTo({ top, behavior: 'smooth' });
+      closeMobileNav();
     });
+  });
 
-    closeMobileNav();
-  }
-
-  scrollLinks.forEach((link) => link.addEventListener('click', smoothScrollTo));
-
-  // ==================== MOBILE NAVIGATION ====================
+  /* ===== MOBILE NAVIGATION ===== */
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.getElementById('primary-nav');
+  const navLinks  = document.getElementById('primary-nav');
 
   function closeMobileNav() {
     if (!navLinks) return;
@@ -37,262 +34,140 @@
     if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
   }
 
-  function toggleMobileNav() {
-    if (!navLinks) return;
-    const isOpen = navLinks.classList.toggle('open');
-    if (hamburger) hamburger.setAttribute('aria-expanded', String(isOpen));
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
   }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', toggleMobileNav);
-  }
-
-  // Close mobile nav when clicking outside
-  document.addEventListener('click', (e) => {
+  // Close on outside click
+  document.addEventListener('click', function (e) {
     if (!navLinks || !hamburger) return;
-    if (navLinks.classList.contains('open') && 
-        !navLinks.contains(e.target) && 
-        !hamburger.contains(e.target)) {
+    if (
+      navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
       closeMobileNav();
     }
   });
 
-  // ==================== FALLING LEAVES ANIMATION ====================
-  const leafColors = [
-    'var(--leaf-green)',
-    'var(--leaf-brown)',
-    'var(--leaf-red)',
-    '#8ab76a',
-    '#b88c5e'
-  ];
-
-  function createLeaf() {
-    const leaf = document.createElement('div');
-    leaf.className = 'leaf';
-    
-    // Random size between 16-28px
-    const size = 16 + Math.random() * 12;
-    leaf.style.width = `${size}px`;
-    leaf.style.height = `${size}px`;
-    
-    // Random starting position
-    const startX = Math.random() * 100;
-    leaf.style.left = `${startX}vw`;
-    
-    // Random color
-    const color = leafColors[Math.floor(Math.random() * leafColors.length)];
-    leaf.style.backgroundColor = color;
-    
-    // Random rotation and animation duration
-    const duration = 12 + Math.random() * 10; // 12-22 seconds
-    const delay = Math.random() * 3;
-    const swayOffset = 30 + Math.random() * 40; // 30-70px
-    
-    leaf.style.setProperty('--sway-offset', `${swayOffset}px`);
-    leaf.style.animation = `fall-and-sway ${duration}s ease-in-out ${delay}s forwards`;
-    
-    // Add slight rotation variance
-    leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
-    
-    document.body.appendChild(leaf);
-    
-    // Remove leaf after animation completes
-    setTimeout(() => {
-      leaf.remove();
-    }, (duration + delay) * 1000 + 500);
-  }
-
-  // Initial batch of leaves
-  for (let i = 0; i < 8; i++) {
-    setTimeout(createLeaf, i * 600);
-  }
-
-  // Periodic leaf generation
-  setInterval(createLeaf, 2800);
-
-  // ==================== SCROLL REVEAL ANIMATION ====================
-  const revealElements = document.querySelectorAll('.reveal');
-  
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add delay based on element's position in viewport
-          const delay = entry.target.dataset.delay || 0;
-          setTimeout(() => {
+  /* ===== SCROLL REVEAL ===== */
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          const delay = Number(entry.target.dataset.delay) || 0;
+          setTimeout(function () {
             entry.target.classList.add('visible');
           }, delay);
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    }
-  );
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
+    );
 
-  revealElements.forEach((el, index) => {
-    // Add staggered delay for elements in the same section
-    const section = el.closest('.section');
-    const sectionElements = section ? section.querySelectorAll('.reveal') : [el];
-    const elementIndex = Array.from(sectionElements).indexOf(el);
-    el.dataset.delay = elementIndex * 100; // 100ms stagger
-    
-    revealObserver.observe(el);
-  });
-
-  // ==================== NAVBAR SCROLL EFFECT ====================
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-
-  function updateNavbar() {
-    const currentScrollY = window.scrollY;
-    
-    if (nav) {
-      if (currentScrollY > 100) {
-        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-      } else {
-        nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.04)';
-      }
-    }
-    
-    lastScrollY = currentScrollY;
-    ticking = false;
-  }
-
-  function requestNavbarUpdate() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateNavbar);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', requestNavbarUpdate, { passive: true });
-
-  // ==================== CONTACT FORM ====================
-  const contactForm = document.getElementById('contact-form');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(contactForm);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const message = formData.get('message');
-      
-      // Show success message (in a real app, this would send to a server)
-      showNotification('Message sent successfully! Thank you for reaching out.', 'success');
-      
-      // Reset form
-      contactForm.reset();
-      
-      // Log for demo purposes
-      console.log('Form submitted:', { name, email, message });
+    document.querySelectorAll('.reveal').forEach(function (el, index) {
+      // Gentle stagger: group elements in sets of 4 to avoid long waits on larger sections
+      el.dataset.delay = (index % 4) * 90;
+      observer.observe(el);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('visible');
     });
   }
 
-  // ==================== NOTIFICATION SYSTEM ====================
-  function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.style.cssText = `
-      position: fixed;
-      top: 90px;
-      right: 24px;
-      background: ${type === 'success' ? 'var(--accent)' : 'var(--fg)'};
-      color: white;
-      padding: 16px 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      z-index: 10000;
-      animation: slideInRight 0.3s ease;
-      font-weight: 500;
-    `;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-      notification.style.animation = 'slideOutRight 0.3s ease';
-      setTimeout(() => notification.remove(), 300);
-    }, 3000);
+  /* ===== NAVBAR SHADOW ON SCROLL ===== */
+  var lastScrollY = 0;
+  var rafPending  = false;
+
+  function updateNavbarShadow() {
+    if (!navbar) return;
+    navbar.style.boxShadow = window.scrollY > 50
+      ? '0 2px 16px rgba(0, 0, 0, 0.07)'
+      : 'none';
+    rafPending = false;
   }
 
-  // Add notification animations
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideInRight {
-      from {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+  window.addEventListener('scroll', function () {
+    lastScrollY = window.scrollY;
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(updateNavbarShadow);
     }
-    
-    @keyframes slideOutRight {
-      from {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
-  // ==================== FOOTER YEAR ====================
-  const yearElement = document.getElementById('year');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  // ==================== PARALLAX EFFECT FOR WAVES ====================
-  const waveLayers = document.querySelectorAll('.wave-layer');
-  
-  function updateParallax() {
-    const scrolled = window.scrollY;
-    
-    waveLayers.forEach((layer, index) => {
-      const speed = (index + 1) * 0.05;
-      const yPos = -(scrolled * speed);
-      layer.style.transform = `translateY(${yPos}px)`;
-    });
-  }
-
-  window.addEventListener('scroll', () => {
-    requestAnimationFrame(updateParallax);
   }, { passive: true });
 
-  // ==================== SKILL CARDS INTERACTION ====================
-  const skillCards = document.querySelectorAll('.skill-card');
-  
-  skillCards.forEach((card) => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-  });
+  /* ===== CONTACT FORM (Formspree) =====
+   *
+   * Setup instructions:
+   *   1. Go to https://formspree.io and create a free account.
+   *   2. Create a new form — Formspree will give you an endpoint like:
+   *      https://formspree.io/f/abcdefgh
+   *   3. In index.html, set the <form action="..."> to your endpoint.
+   *   4. That's it — submissions go straight to your email inbox.
+   *
+   * The free tier supports 50 submissions / month with no server needed.
+   */
+  var form       = document.getElementById('contact-form');
+  var statusEl   = document.getElementById('form-status');
+  var submitBtn  = document.getElementById('submit-btn');
 
-  // ==================== PROJECT CARDS HOVER EFFECT ====================
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  projectCards.forEach((card) => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-  });
+  if (form && statusEl && submitBtn) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-  // ==================== INITIALIZE ====================
-  console.log('Portfolio initialized successfully! 🌊🍃');
-  
-  // Trigger initial navbar update
-  updateNavbar();
+      // Basic client-side check before hitting network
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+      setStatus('', '');
+
+      try {
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          setStatus('Message sent — thank you!', 'success');
+          form.reset();
+        } else {
+          var data = {};
+          try { data = await res.json(); } catch (_) { /* ignore */ }
+          var msg = (data.errors || []).map(function (err) { return err.message; }).join(', ')
+            || 'Submission failed — please try again.';
+          setStatus(msg, 'error');
+        }
+      } catch (_) {
+        setStatus('Network error — please check your connection and try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-regular fa-paper-plane"></i> Send Message';
+      }
+    });
+  }
+
+  function setStatus(message, type) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.className   = 'form-status' + (type ? ' ' + type : '');
+  }
+
+  /* ===== FOOTER YEAR ===== */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Init navbar shadow on load
+  updateNavbarShadow();
+
 })();

@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yajjyu Tuladhar - AI Developer Portfolio</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Yajjyu Tuladhar — AI Developer</title>
 
     <!-- Font Awesome -->
     <link
@@ -23,329 +18,381 @@
     <script src="javascript/script.js" defer></script>
   </head>
   <body>
-    <!-- Japanese Wave Background -->
-    <div class="water-bg" aria-hidden="true">
-      <div class="wave-layer wave-1"></div>
-      <div class="wave-layer wave-2"></div>
-      <div class="wave-layer wave-3"></div>
-      <div class="water-ripples"></div>
-    </div>
 
+    <!-- ===== NAVBAR ===== -->
     <header class="navbar" role="banner">
       <div class="container nav-inner">
-        <a class="brand" href="#home" aria-label="Go to Home">
-          <span class="brand-icon">波</span>
-          <span>Yajjyu.dev</span>
-        </a>
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <a class="brand" href="#home" aria-label="Home">Yajjyu.dev</a>
+        <button
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
           <i class="fa-solid fa-bars"></i>
         </button>
         <nav id="primary-nav" class="nav-links" role="navigation" aria-label="Primary">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
-          <a href="#research">Research</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main id="home" class="section home" tabindex="-1">
-      <div class="container home-inner">
-        <div class="avatar-wrapper reveal">
-          <div class="avatar-glow"></div>
-          <div class="avatar" role="img" aria-label="Portrait"></div>
-        </div>
-        <div class="hero-text reveal" aria-live="polite">
-          <div class="waves-decoration" aria-hidden="true">
-            <svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
-              <path class="wave-path wave-path-1" d="M0,100 Q300,50 600,100 T1200,100 L1200,300 L0,300 Z" />
-              <path class="wave-path wave-path-2" d="M0,120 Q300,80 600,120 T1200,120 L1200,300 L0,300 Z" />
-              <path class="wave-path wave-path-3" d="M0,140 Q300,110 600,140 T1200,140 L1200,300 L0,300 Z" />
-            </svg>
-          </div>
+    <!-- ===== HERO ===== -->
+    <main id="home" class="section hero" tabindex="-1">
+      <div class="container hero-inner">
+        <div class="avatar reveal" role="img" aria-label="Yajjyu Tuladhar initials">YT</div>
+        <div class="hero-text reveal">
           <h1 class="hero-title">Yajjyu Tuladhar</h1>
-          <p class="hero-subtitle">AI Developer & Student — crafting practical solutions across CV, NLP, and the web.</p>
+          <p class="hero-subtitle">
+            AI Developer &amp; Student — building practical systems across
+            Computer Vision, NLP, and Generative AI.
+          </p>
           <div class="hero-actions">
-            <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" class="btn btn-outline" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn profile"
+            >
               <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
-            <a href="#" class="btn btn-primary" aria-label="Download CV">
+            <a
+              href="CV_Yajjyu_Tuladhar.pdf"
+              class="btn btn-primary"
+              download
+              aria-label="Download CV"
+            >
               <i class="fa-solid fa-file-arrow-down"></i> Download CV
             </a>
           </div>
         </div>
       </div>
-      <a class="scroll-down" href="#about" aria-label="Scroll to About">
-        <i class="fa-solid fa-angles-down"></i>
+      <a class="scroll-down" href="#about" aria-label="Scroll to About section">
+        <i class="fa-solid fa-angle-down"></i>
       </a>
     </main>
 
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="section about" aria-labelledby="about-title">
       <div class="container">
-        <h2 id="about-title" class="section-title reveal">
-          <span class="title-decoration">✦</span>
-          About Me
-        </h2>
+        <h2 id="about-title" class="section-title reveal">About Me</h2>
         <div class="about-content reveal">
           <p>
-           A Bachelor's of Technology in Artificial Intelligence student with hands-on experience in diverse group and personal projects. Eager to collaborate, contribute, and continuously learn in a dynamic tech environment.
+            AI undergraduate at Kathmandu University with an experience of building end-to-end AI
+            systems across ML, Computer Vision, NLP, Gen AI, and IoT. As Coordinator &amp; Mentor at the
+            KU AI Club, I lead multi-track competitions and
+            have mentored peers. I also have secure external sponsorships and partnerships to grow the club's
+            reach. My focus is bridging research and practice: turning ideas into reliable,
+            deployable tools rather than leaving them as experiments.
           </p>
-          <p>
-           Passionate about web development, machine learning, and deep learning frameworks. Particularly interested in computer vision, automation tasks, IoT, and NLP projects. I like experimenting with models,
-           IoT integration, and turning ideas into reliable tools.
-          </p>
-        
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section skills-certificates" aria-labelledby="skills-title">
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section skills" aria-labelledby="skills-title">
       <div class="container">
-        <h2 id="skills-title" class="section-title reveal">
-          <span class="title-decoration">✦</span>
-          Skills & Certifications
-        </h2>
-        
-        <div class="skills-certs-wrapper">
-          <!-- Skills Column -->
-          <div class="skills-column reveal">
-            <div class="skills-category">
-              <h3 class="category-title">
-                <i class="fa-solid fa-code category-icon"></i>
-                Programming & Tools
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <i class="fa-brands fa-python skill-icon"></i>
-                  <span>Python</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-brands fa-js skill-icon"></i>
-                  <span>Django</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-brands fa-react skill-icon"></i>
-                  <span>JavaScript</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-brands fa-node-js skill-icon"></i>
-                  <span>Node.js</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-brands fa-git-alt skill-icon"></i>
-                  <span>C++</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-brands fa-docker skill-icon"></i>
-                  <span>Vercel</span>
-                </div>
-              </div>
-            </div>
+        <h2 id="skills-title" class="section-title reveal">Skills</h2>
 
-            <div class="skills-category">
-              <h3 class="category-title">
-                <i class="fa-solid fa-brain category-icon"></i>
-                Machine Learning & AI
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <i class="fa-solid fa-robot skill-icon"></i>
-                  <span>PyTorch</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-network-wired skill-icon"></i>
-                  <span>TensorFlow</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-eye skill-icon"></i>
-                  <span>Computer Vision</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-language skill-icon"></i>
-                  <span>NLP</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-bolt skill-icon"></i>
-                  <span>FastAPI</span>
-                </div>
-              </div>
-            </div>
+        <div class="skills-list">
 
-            <div class="skills-category">
-              <h3 class="category-title">
-                <i class="fa-solid fa-chart-line category-icon"></i>
-                Data Science
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <i class="fa-solid fa-table skill-icon"></i>
-                  <span>Pandas</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-square-root-variable skill-icon"></i>
-                  <span>NumPy</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-chart-bar skill-icon"></i>
-                  <span>Matplotlib</span>
-                </div>
-                <div class="skill-card">
-                  <i class="fa-solid fa-chart-area skill-icon"></i>
-                  <span>Seaborn</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Certificates Column -->
-          <!-- <div class="certs-column reveal">
-            <h3 class="certs-heading">
-              <i class="fa-solid fa-certificate"></i>
-              Certificates
+          <div class="skill-group reveal">
+            <h3 class="group-title">
+              <i class="fa-solid fa-brain"></i> AI &amp; ML
             </h3>
-            <div class="certs-list">
-              <div class="cert-card">
-                <div class="cert-icon">
-                  <i class="fa-solid fa-database"></i>
-                </div>
-                <div class="cert-content">
-                  <h4>Database Management Systems</h4>
-                  <p class="cert-meta">Online · 2023</p>
-                </div>
-              </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">Computer Vision</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">Graph Neural Networks</span>
             </div>
-          </div> -->
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="group-title">
+              <i class="fa-solid fa-microchip"></i> Generative AI
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">Multimodal RAG</span>
+              <span class="skill-tag">Few-Shot Learning</span>
+              <span class="skill-tag">LLM Integration</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="group-title">
+              <i class="fa-solid fa-layer-group"></i> Frameworks &amp; Libraries
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">scikit-learn</span>
+              <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">Hugging Face Transformers</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="group-title">
+              <i class="fa-solid fa-code"></i> Languages
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Julia</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="group-title">
+              <i class="fa-solid fa-wrench"></i> Web &amp; Tools
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">API Integration</span>
+              <span class="skill-tag">Data Preprocessing</span>
+              <span class="skill-tag">Data Visualization</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="research" class="section research" aria-labelledby="research-title">
-      <div class="container">
-        <h2 id="research-title" class="section-title reveal">
-          <span class="title-decoration">✦</span>
-          Research
-        </h2>
-        <div class="pub-list reveal">
-          <div class="pub-item">
-            <i class="fa-solid fa-file-lines pub-icon"></i>
-            <div class="pub-content">
-              <a href="#" class="pub-link">Exploring Graph Methods for Stock Forecasting
-              </a>
-              <span class="pub-meta">Journal of NAST College(JONC), Vol 1, 2025</span>
-            </div>
-          </div>
-          <div class="pub-item">
-            <i class="fa-solid fa-file-lines pub-icon"></i>
-            <div class="pub-content">
-              <a href="#" class="pub-link">Preserving Nepal’s Script Heritage: Few-Shot Learning of Nepali
-              Ancient Scripts</a>
-              <span class="pub-meta">In submission process</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section projects" aria-labelledby="projects-title">
       <div class="container">
-        <h2 id="projects-title" class="section-title reveal">
-          <span class="title-decoration">✦</span>
-          Projects
-        </h2>
-        <div class="projects-grid reveal" role="list">
-          <!-- <article class="project-card" role="listitem">
-            <div class="project-icon">
-              <i class="fa-solid fa-comments"></i>
+        <h2 id="projects-title" class="section-title reveal">Projects</h2>
+        <div class="projects-grid" role="list">
+
+          <article class="project-card reveal" role="listitem">
+            <div class="project-header">
+              <span class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-paw"></i>
+              </span>
+              <h3>Wildlife Animal Detection</h3>
             </div>
-            <h3>Neon Chat RAG</h3>
-            <p>Lightweight retrieval-augmented chat app with local embeddings and terminal-inspired UI.</p>
-            <ul class="tags" aria-label="Tech">
-              <li><i class="fa-brands fa-python"></i> Python</li>
-              <li><i class="fa-solid fa-database"></i> FAISS</li>
-              <li><i class="fa-solid fa-bolt"></i> FastAPI</li>
-            </ul>
-            <a class="btn btn-primary" href="#" aria-label="View Neon Chat RAG">
-              View Project <i class="fa-solid fa-arrow-right"></i>
+            <p>
+              Real-time computer vision model for wildlife animal classification and detection,
+              built and optimized for field deployment in low-resource environments.
+            </p>
+            <div class="project-tags" aria-label="Technologies">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>PyTorch</span>
+              <span>Computer Vision</span>
+            </div>
+            <a href="#" class="project-link" aria-label="View Wildlife Animal Detection on GitHub">
+              View on GitHub <i class="fa-solid fa-arrow-right"></i>
             </a>
-          </article> -->
-          
-          
+          </article>
+
+          <article class="project-card reveal" role="listitem">
+            <div class="project-header">
+              <span class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-font"></i>
+              </span>
+              <h3>Nepali Script OCR</h3>
+            </div>
+            <p>
+              OCR system for low-resource Nepali text using few-shot learning to address data
+              scarcity. Preserving Nepal's script heritage through practical AI. In submission.
+            </p>
+            <div class="project-tags" aria-label="Technologies">
+              <span>Python</span>
+              <span>Few-Shot Learning</span>
+              <span>OCR</span>
+              <span>NLP</span>
+            </div>
+            <a href="#" class="project-link" aria-label="View Nepali Script OCR on GitHub">
+              View on GitHub <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal" role="listitem">
+            <div class="project-header">
+              <span class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-database"></i>
+              </span>
+              <h3>Multimodal RAG</h3>
+            </div>
+            <p>
+              Retrieval-augmented generation pipeline integrating text and image data for
+              context-aware, multi-source AI responses across heterogeneous document types.
+            </p>
+            <div class="project-tags" aria-label="Technologies">
+              <span>Python</span>
+              <span>RAG</span>
+              <span>LLM</span>
+              <span>Hugging Face</span>
+            </div>
+            <a href="#" class="project-link" aria-label="View Multimodal RAG on GitHub">
+              View on GitHub <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal" role="listitem">
+            <div class="project-header">
+              <span class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-chart-line"></i>
+              </span>
+              <h3>Graph Methods for Stock Forecasting</h3>
+            </div>
+            <p>
+              Modeled NEPSE stock data using Graph Neural Networks to identify inter-stock
+              relationships and improve forecasting over traditional time-series approaches.
+              Published in JONC Vol 1, 2025.
+            </p>
+            <div class="project-tags" aria-label="Technologies">
+              <span>Python</span>
+              <span>GNN</span>
+              <span>PyTorch</span>
+              <span>Finance</span>
+            </div>
+            <a href="#" class="project-link" aria-label="View Stock Forecasting project on GitHub">
+              View on GitHub <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal" role="listitem">
+            <div class="project-header">
+              <span class="project-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </span>
+              <h3>Hydroponics AI</h3>
+            </div>
+            <p>
+              Smart NFT Hydroponics system with IoT sensors for real-time monitoring of nutrient
+              levels, water flow, and environment. Reinforcement Learning agents adaptively
+              optimize growth parameters for improved crop yield and resource efficiency.
+            </p>
+            <div class="project-tags" aria-label="Technologies">
+              <span>Python</span>
+              <span>IoT</span>
+              <span>Reinforcement Learning</span>
+              <span>Sensors</span>
+            </div>
+            <a href="#" class="project-link" aria-label="View Hydroponics AI on GitHub">
+              View on GitHub <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="container">
-        <h2 id="contact-title" class="section-title reveal">
-          <span class="title-decoration">✦</span>
-          Get in Touch
-        </h2>
+        <h2 id="contact-title" class="section-title reveal">Get in Touch</h2>
         <div class="contact-grid reveal">
-          <form id="contact-form" class="contact-form" aria-label="Contact form">
+
+          <!--
+            FORMSPREE SETUP:
+            1. Sign up at https://formspree.io (free tier supports 50 submissions/month)
+            2. Create a new form and copy your endpoint URL
+            3. Replace the action value below with your own endpoint, e.g.:
+               action="https://formspree.io/f/abcdefgh"
+          -->
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            novalidate
+            aria-label="Contact form"
+          >
             <div class="form-field">
-              <label for="name"><i class="fa-solid fa-user"></i> Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+                autocomplete="name"
+              />
             </div>
             <div class="form-field">
-              <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              />
             </div>
             <div class="form-field">
-              <label for="message"><i class="fa-solid fa-message"></i> Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Say hello..." required></textarea>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Your message…"
+                required
+              ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" aria-label="Submit contact form">
+            <button type="submit" class="btn btn-primary" id="submit-btn">
               <i class="fa-regular fa-paper-plane"></i> Send Message
             </button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
+
           <div class="contact-aside">
             <h3>Reach me directly</h3>
-            <div class="contact-info">
+            <p class="contact-note">
+              Open to AI research collaborations, project discussions, and mentoring.
+            </p>
+            <div class="contact-links">
               <a href="mailto:tuladharyajjyu.2004@gmail.com" class="contact-link">
-                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
                 <span>tuladharyajjyu.2004@gmail.com</span>
               </a>
-              <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" target="_blank" rel="noopener" class="contact-link">
-                <i class="fa-brands fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/"
+                target="_blank"
+                rel="noopener"
+                class="contact-link"
+              >
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <span>linkedin.com/in/yajjyu-tuladhar</span>
               </a>
-              <a href="https://github.com/YAzz303" target="_blank" rel="noopener" class="contact-link">
-                <i class="fa-brands fa-github"></i>
+              <a
+                href="https://github.com/YAzz303"
+                target="_blank"
+                rel="noopener"
+                class="contact-link"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
                 <span>github.com/YAzz303</span>
               </a>
             </div>
-            <p class="contact-description">Let's collaborate on AI projects or discuss innovative ideas!</p>
-            <ul class="socials" aria-label="Social Links">
-              <li>
-                <a href="mailto:tuladharyajjyu.2004@gmail.com" aria-label="Email" title="Email">
-                  <i class="fa-regular fa-envelope"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/YAzz303" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </li>
-            </ul>
           </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer" role="contentinfo">
       <div class="container">
-        <div class="footer-content">
-          <p>© <span id="year"></span> Yajjyu Tuladhar</p>
-        </div>
+        <p>© <span id="year"></span> Yajjyu Tuladhar</p>
       </div>
     </footer>
+
   </body>
 </html>
