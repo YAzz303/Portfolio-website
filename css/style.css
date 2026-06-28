@@ -575,12 +575,41 @@ body {
   outline: none;
 }
 
-.contact-link i {
-  color: var(--accent);
-  font-size: 15px;
-  width: 16px;
-  text-align: center;
+/* Brand icon wrappers — sized square, colored pill */
+.brand-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   flex-shrink: 0;
+  font-size: 14px;
+  transition: filter 0.2s;
+}
+
+/* Gmail — white bg so the multicolor SVG reads clearly */
+.brand-gmail {
+  background: #fff;
+  border: 1px solid #e0d6cc;
+  padding: 5px;
+}
+
+/* LinkedIn — official blue #0A66C2 */
+.brand-linkedin {
+  background: #0A66C2;
+  color: #fff;
+}
+
+/* GitHub — near-black */
+.brand-github {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.contact-link:hover .brand-icon-wrap,
+.contact-link:focus .brand-icon-wrap {
+  filter: brightness(1.1);
 }
 
 .contact-link span {
