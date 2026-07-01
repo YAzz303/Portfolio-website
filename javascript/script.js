@@ -1,12 +1,12 @@
 /**
  * Yajjyu Tuladhar Portfolio — script.js
- * Modules: smooth scroll · mobile nav · scroll reveal · navbar shadow · contact form · footer year
+ * Modules: smooth scroll · mobile nav · scroll reveal · navbar shadow · active nav · contact form · footer year
  */
 (function () {
   'use strict';
 
   /* ===== SMOOTH SCROLLING ===== */
-  const navbar = document.querySelector('.navbar');
+  const navbar    = document.querySelector('.navbar');
   const navHeight = () => (navbar ? navbar.offsetHeight : 0);
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -31,12 +31,16 @@
   function closeMobileNav() {
     if (!navLinks) return;
     navLinks.classList.remove('open');
-    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+    if (hamburger) {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
   }
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', function () {
       const isOpen = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
     });
   }
@@ -53,6 +57,29 @@
     }
   });
 
+  /* ===== ACTIVE NAV LINK ON SCROLL ===== */
+  const sections = document.querySelectorAll('section[id], main[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    let currentId = '';
+    const offset = navHeight() + 80;
+
+    sections.forEach(function (section) {
+      const top = section.getBoundingClientRect().top;
+      if (top <= offset) {
+        currentId = section.id;
+      }
+    });
+
+    navAnchors.forEach(function (anchor) {
+      anchor.classList.toggle(
+        'active',
+        anchor.getAttribute('href') === '#' + currentId
+      );
+    });
+  }
+
   /* ===== SCROLL REVEAL ===== */
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -66,67 +93,78 @@
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach(function (el, index) {
-      // Gentle stagger: group elements in sets of 4 to avoid long waits on larger sections
-      el.dataset.delay = (index % 4) * 90;
+    // Assign stagger delays per section
+    document.querySelectorAll('section, main').forEach(function (section) {
+      const revealEls = section.querySelectorAll('.reveal');
+      revealEls.forEach(function (el, index) {
+        // Respect data-delay set in HTML, otherwise compute stagger
+        if (!el.dataset.delay) {
+          el.dataset.delay = (index % 5) * 80;
+        }
+        observer.observe(el);
+      });
+    });
+
+    // Also observe any top-level reveal elements
+    document.querySelectorAll('.reveal:not(section .reveal):not(main .reveal)').forEach(function (el) {
       observer.observe(el);
     });
+
   } else {
-    // Fallback for browsers without IntersectionObserver
+    // Fallback
     document.querySelectorAll('.reveal').forEach(function (el) {
       el.classList.add('visible');
     });
   }
 
-  /* ===== NAVBAR SHADOW ON SCROLL ===== */
-  var lastScrollY = 0;
-  var rafPending  = false;
+  /* ===== NAVBAR SHADOW & ACTIVE LINK ON SCROLL ===== */
+  var rafPending = false;
+
+  function onScroll() {
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(function () {
+        updateNavbarShadow();
+        updateActiveNav();
+        rafPending = false;
+      });
+    }
+  }
 
   function updateNavbarShadow() {
     if (!navbar) return;
-    navbar.style.boxShadow = window.scrollY > 50
-      ? '0 2px 16px rgba(0, 0, 0, 0.07)'
+    navbar.style.boxShadow = window.scrollY > 40
+      ? '0 1px 24px rgba(0,0,0,0.08)'
       : 'none';
-    rafPending = false;
   }
 
-  window.addEventListener('scroll', function () {
-    lastScrollY = window.scrollY;
-    if (!rafPending) {
-      rafPending = true;
-      requestAnimationFrame(updateNavbarShadow);
-    }
-  }, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ===== CONTACT FORM (Formspree) =====
    *
-   * Setup instructions:
+   * Setup:
    *   1. Go to https://formspree.io and create a free account.
-   *   2. Create a new form — Formspree will give you an endpoint like:
-   *      https://formspree.io/f/abcdefgh
+   *   2. Create a new form — get an endpoint like: https://formspree.io/f/abcdefgh
    *   3. In index.html, set the <form action="..."> to your endpoint.
-   *   4. That's it — submissions go straight to your email inbox.
    *
-   * The free tier supports 50 submissions / month with no server needed.
+   * Free tier: 50 submissions/month with no server needed.
    */
-  var form       = document.getElementById('contact-form');
-  var statusEl   = document.getElementById('form-status');
-  var submitBtn  = document.getElementById('submit-btn');
+  var form      = document.getElementById('contact-form');
+  var statusEl  = document.getElementById('form-status');
+  var submitBtn = document.getElementById('submit-btn');
 
   if (form && statusEl && submitBtn) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Basic client-side check before hitting network
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      // Disable button and show loading state
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
       setStatus('', '');
@@ -167,7 +205,8 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Init navbar shadow on load
+  /* ===== INIT ===== */
   updateNavbarShadow();
+  updateActiveNav();
 
 })();

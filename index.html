@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yajjyu Tuladhar — AI Developer</title>
+    <title>Yajjyu Tuladhar — AI Researcher & Student</title>
+    <meta name="description" content="Portfolio of Yajjyu Tuladhar — AI undergraduate at Kathmandu University working on Computer Vision, NLP, Graph Neural Networks, and Generative AI." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="javascript/script.js" defer></script>
@@ -22,20 +22,18 @@
     <!-- ===== NAVBAR ===== -->
     <header class="navbar" role="banner">
       <div class="container nav-inner">
-        <a class="brand" href="#home" aria-label="Home">Yajjyu.dev</a>
-        <button
-          class="hamburger"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-        >
-          <i class="fa-solid fa-bars"></i>
+        <a class="brand" href="#home" aria-label="Home">YT.</a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
         <nav id="primary-nav" class="nav-links" role="navigation" aria-label="Primary">
-          <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#leadership">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -44,35 +42,53 @@
     <!-- ===== HERO ===== -->
     <main id="home" class="section hero" tabindex="-1">
       <div class="container hero-inner">
-        <div class="avatar reveal" role="img" aria-label="Yajjyu Tuladhar initials">YT</div>
-        <div class="hero-text reveal">
-          <h1 class="hero-title">Yajjyu Tuladhar</h1>
-          <p class="hero-subtitle">
-            AI Developer &amp; Student — building practical systems across
-            Computer Vision, NLP, and Generative AI.
+
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <p class="hero-label reveal" data-delay="0">AI Student · Undergraduate</p>
+          <h1 class="hero-title reveal" data-delay="80">
+            Yajjyu<br />Tuladhar
+          </h1>
+          <p class="hero-subtitle reveal" data-delay="160">
+            Building end-to-end AI systems across Computer Vision, NLP, and Generative AI — from research to deployment.
           </p>
-          <div class="hero-actions">
-            <a
-              href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener"
-              aria-label="LinkedIn profile"
-            >
-              <i class="fa-brands fa-linkedin"></i> LinkedIn
+          <div class="hero-meta reveal" data-delay="220">
+            <span><i class="fa-solid fa-location-dot"></i> Dillibazar, Kathmandu, Nepal</span>
+          </div>
+          <div class="hero-actions reveal" data-delay="280">
+            <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+              View Projects <i class="fa-solid fa-arrow-down"></i>
             </a>
-            <a
-              href="CV_Yajjyu_Tuladhar.pdf"
-              class="btn btn-primary"
-              download
-              aria-label="Download CV"
-            >
+            <a href="CV_Yajjyu_Tuladhar.pdf" class="btn btn-outline" download id="hero-cv-btn">
               <i class="fa-solid fa-file-arrow-down"></i> Download CV
+            </a>
+            <a href="#contact" class="btn btn-ghost" id="hero-contact-btn">Contact</a>
+          </div>
+        </div>
+
+        <!-- Right: Profile Card -->
+        <div class="hero-card reveal" data-delay="120" aria-hidden="true">
+          <div class="profile-avatar" role="img" aria-label="Yajjyu Tuladhar profile initials">YT</div>
+          <div class="profile-info">
+            <p class="profile-name">Yajjyu Tuladhar</p>
+            <p class="profile-role">AI Student (Undergraduate)</p>
+            <p class="profile-uni"><i class="fa-solid fa-graduation-cap"></i> Kathmandu University</p>
+          </div>
+          <div class="profile-links">
+            <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" target="_blank" rel="noopener" aria-label="LinkedIn" class="profile-social">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/YAzz303" target="_blank" rel="noopener" aria-label="GitHub" class="profile-social">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:tuladharyajjyu.2004@gmail.com" aria-label="Email" class="profile-social">
+              <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
         </div>
+
       </div>
-      <a class="scroll-down" href="#about" aria-label="Scroll to About section">
+      <a class="scroll-down" href="#about" aria-label="Scroll to About">
         <i class="fa-solid fa-angle-down"></i>
       </a>
     </main>
@@ -80,15 +96,57 @@
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section about" aria-labelledby="about-title">
       <div class="container">
-        <h2 id="about-title" class="section-title reveal">About Me</h2>
-        <div class="about-content reveal">
-          <p>
-            AI undergraduate at Kathmandu University with an experience of building end-to-end AI
-            systems across Computer Vision, NLP, and Generative AI. As Coordinator &amp; Mentor at the
-            KU AI Club, I lead competitions, workshops, and events. I have also secured sponsorships and partnerships to grow the club's
-            reach. My focus is bridging research and practice: turning ideas into reliable,
-            deployable tools rather than leaving them as experiments.
-          </p>
+        <div class="about-grid">
+          <!-- Left: Content -->
+          <div class="about-content">
+            <p class="section-label reveal">About</p>
+            <h2 id="about-title" class="section-title reveal">Bridging Research<br />& Deployment</h2>
+            <p class="about-bio reveal">
+              I'm an AI undergraduate at Kathmandu University with hands-on experience building end-to-end systems across Computer Vision, NLP, and Generative AI. As Coordinator &amp; Mentor at the KU AI Club, I organise competitions, workshops, and outreach events — while also securing sponsorships and partnerships to grow the community.
+            </p>
+            <p class="about-bio reveal">
+              My focus is turning research-grade ideas into reliable, deployable tools. I care about the full pipeline — from data and modelling to practical output — rather than leaving work as experiments.
+            </p>
+            <div class="about-chips reveal">
+              <span class="chip">Computer Vision</span>
+              <span class="chip">NLP &amp; Language AI</span>
+              <span class="chip">Graph Neural Networks</span>
+              <span class="chip">Generative AI</span>
+              <span class="chip">RAG Systems</span>
+              <span class="chip">IoT &amp; Embedded AI</span>
+            </div>
+          </div>
+
+          <!-- Right: Profile Panel -->
+          <div class="about-panel reveal">
+            <div class="about-avatar" role="img" aria-label="Yajjyu Tuladhar">YT</div>
+            <div class="about-panel-info">
+              <div class="info-row">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>B.Tech Artificial Intelligence</span>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-university"></i>
+                <span>Kathmandu University</span>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-calendar"></i>
+                <span>2022 — Present</span>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Kathmandu, Nepal</span>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:tuladharyajjyu.2004@gmail.com">tuladharyajjyu.2004@gmail.com</a>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+9779841261668">+977-9841261668</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -96,197 +154,347 @@
     <!-- ===== SKILLS ===== -->
     <section id="skills" class="section skills" aria-labelledby="skills-title">
       <div class="container">
-        <h2 id="skills-title" class="section-title reveal">Skills</h2>
+        <p class="section-label reveal">Technical Skills</p>
+        <h2 id="skills-title" class="section-title reveal">Framework &amp; Tool Stack</h2>
 
-        <div class="skills-list">
-
-          <div class="skill-group reveal">
-            <h3 class="group-title">
-              <i class="fa-solid fa-brain"></i> AI &amp; ML
-            </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Machine Learning</span>
-              <span class="skill-tag">Deep Learning</span>
-              <span class="skill-tag">Computer Vision</span>
-              <span class="skill-tag">NLP</span>
-              <span class="skill-tag">Graph Neural Networks</span>
-            </div>
+        <!-- Logo row -->
+        <div class="skill-logos reveal">
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-logo-img" />
+            <span>PyTorch</span>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="group-title">
-              <i class="fa-solid fa-microchip"></i> Generative AI
-            </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">RAG</span>
-              <span class="skill-tag">Multimodal RAG</span>
-              <span class="skill-tag">Few-Shot Learning</span>
-              <span class="skill-tag">LLM Integration</span>
-            </div>
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-logo-img" />
+            <span>TensorFlow</span>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="group-title">
-              <i class="fa-solid fa-layer-group"></i> Frameworks &amp; Libraries
-            </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">TensorFlow</span>
-              <span class="skill-tag">scikit-learn</span>
-              <span class="skill-tag">OpenCV</span>
-              <span class="skill-tag">Hugging Face Transformers</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">NumPy</span>
-            </div>
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" class="skill-logo-img" />
+            <span>scikit-learn</span>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="group-title">
-              <i class="fa-solid fa-code"></i> Languages
-            </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">C++</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Julia</span>
-            </div>
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="skill-logo-img" />
+            <span>OpenCV</span>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="group-title">
-              <i class="fa-solid fa-wrench"></i> Web &amp; Tools
-            </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Web Development</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">API Integration</span>
-              <span class="skill-tag">Data Preprocessing</span>
-              <span class="skill-tag">Data Visualization</span>
-            </div>
+          <div class="skill-logo-item">
+            <div class="skill-logo-hf" aria-hidden="true">🤗</div>
+            <span>Hugging Face</span>
           </div>
-
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-logo-img" />
+            <span>Pandas</span>
+          </div>
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-logo-img" />
+            <span>NumPy</span>
+          </div>
+          <div class="skill-logo-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-logo-img" />
+            <span>Git</span>
+          </div>
         </div>
+
+        <!-- Skill domains -->
+        <div class="skill-domains">
+          <div class="skill-domain reveal">
+            <h3 class="domain-title"><i class="fa-solid fa-brain"></i> AI &amp; Machine Learning</h3>
+            <div class="domain-tags">
+              <span class="dtag">Machine Learning</span>
+              <span class="dtag">Deep Learning</span>
+              <span class="dtag">Graph Neural Networks</span>
+              <span class="dtag">Few-Shot Learning</span>
+              <span class="dtag">Reinforcement Learning</span>
+            </div>
+          </div>
+          <div class="skill-domain reveal">
+            <h3 class="domain-title"><i class="fa-solid fa-microchip"></i> Generative AI</h3>
+            <div class="domain-tags">
+              <span class="dtag">RAG</span>
+              <span class="dtag">Multimodal RAG</span>
+              <span class="dtag">LLM Integration</span>
+              <span class="dtag">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="skill-domain reveal">
+            <h3 class="domain-title"><i class="fa-solid fa-code"></i> Languages</h3>
+            <div class="domain-tags">
+              <span class="dtag">Python</span>
+              <span class="dtag">C++</span>
+              <span class="dtag">JavaScript</span>
+              <span class="dtag">Java</span>
+              <span class="dtag">Julia</span>
+            </div>
+          </div>
+          <div class="skill-domain reveal">
+            <h3 class="domain-title"><i class="fa-solid fa-wrench"></i> Tools &amp; Other</h3>
+            <div class="domain-tags">
+              <span class="dtag">Computer Vision</span>
+              <span class="dtag">NLP</span>
+              <span class="dtag">API Integration</span>
+              <span class="dtag">Data Visualization</span>
+              <span class="dtag">IoT</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section projects" aria-labelledby="projects-title">
       <div class="container">
-        <h2 id="projects-title" class="section-title reveal">Projects</h2>
+        <p class="section-label reveal">Work</p>
+        <h2 id="projects-title" class="section-title reveal">Selected Projects</h2>
+
         <div class="projects-grid" role="list">
 
+          <!-- Stock Forecasting -->
           <article class="project-card reveal" role="listitem">
-            <div class="project-header">
-              <span class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-paw"></i>
-              </span>
-              <h3>Wildlife Animal Detection</h3>
+            <div class="card-top">
+              <span class="category-label research">Research / Analytics</span>
+              <span class="card-icon"><i class="fa-solid fa-chart-network"></i></span>
             </div>
-            <p>
-              Real-time computer vision model for wildlife animal classification and detection,
-              built and optimized for field deployment in low-resource environments.
-            </p>
-            <div class="project-tags" aria-label="Technologies">
-              <span>Python</span>
+            <h3>Graph Methods for Stock Market Forecasting</h3>
+            <p>Modelled NEPSE stock data using Graph Neural Networks to capture inter-stock relationships and outperform traditional time-series baselines. Published in JONC Vol 1, 2025.</p>
+            <div class="project-tags">
+              <span>GNN</span>
+              <span>NEPSE</span>
+              <span>PyTorch</span>
+              <span>Time Series</span>
+              <span>Finance</span>
+            </div>
+            <a href="#" class="card-link" aria-label="View Stock Forecasting on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <!-- Wildlife Detection -->
+          <article class="project-card reveal" role="listitem">
+            <div class="card-top">
+              <span class="category-label vision">Computer Vision</span>
+              <span class="card-icon"><i class="fa-solid fa-paw"></i></span>
+            </div>
+            <h3>Wildlife Animal Detection System</h3>
+            <p>Real-time classification and detection model for wildlife species, optimised for field deployment in low-resource environments with minimal latency.</p>
+            <div class="project-tags">
+              <span>Computer Vision</span>
               <span>OpenCV</span>
               <span>PyTorch</span>
-              <span>Computer Vision</span>
+              <span>Object Detection</span>
             </div>
-            <a href="#" class="project-link" aria-label="View Wildlife Animal Detection on GitHub">
-              View on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a href="#" class="card-link" aria-label="View Wildlife Detection on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </article>
 
+          <!-- Daraz Recommendation -->
           <article class="project-card reveal" role="listitem">
-            <div class="project-header">
-              <span class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-font"></i>
-              </span>
-              <h3>Nepali Script OCR</h3>
+            <div class="card-top">
+              <span class="category-label rec">Recommendation Systems</span>
+              <span class="card-icon"><i class="fa-solid fa-tags"></i></span>
             </div>
-            <p>
-              OCR system for low-resource Nepali text using few-shot learning to address data
-              scarcity. Preserving Nepal's script heritage through practical AI. In submission.
-            </p>
-            <div class="project-tags" aria-label="Technologies">
+            <h3>Daraz Product Recommendation System</h3>
+            <p>E-commerce product recommendation engine built for the Daraz platform, leveraging collaborative filtering and content-based approaches to improve product discovery.</p>
+            <div class="project-tags">
+              <span>Recommender Systems</span>
+              <span>Collaborative Filtering</span>
               <span>Python</span>
-              <span>Few-Shot Learning</span>
+              <span>scikit-learn</span>
+            </div>
+            <a href="#" class="card-link" aria-label="View Daraz Recommendation on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <!-- Nepali OCR -->
+          <article class="project-card reveal" role="listitem">
+            <div class="card-top">
+              <span class="category-label nlp">NLP / Language AI</span>
+              <span class="card-icon"><i class="fa-solid fa-font"></i></span>
+            </div>
+            <h3>Nepali Script OCR (Few-Shot Learning)</h3>
+            <p>OCR system for low-resource Nepali text using few-shot learning to address severe data scarcity. Preserving Nepal's script heritage through practical AI. Under submission.</p>
+            <div class="project-tags">
               <span>OCR</span>
+              <span>Few-Shot Learning</span>
               <span>NLP</span>
+              <span>Low-Resource</span>
             </div>
-            <a href="#" class="project-link" aria-label="View Nepali Script OCR on GitHub">
-              View on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a href="#" class="card-link" aria-label="View Nepali OCR on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </article>
 
+          <!-- Multimodal RAG -->
           <article class="project-card reveal" role="listitem">
-            <div class="project-header">
-              <span class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-database"></i>
-              </span>
-              <h3>Multimodal RAG</h3>
+            <div class="card-top">
+              <span class="category-label genai">GenAI / RAG</span>
+              <span class="card-icon"><i class="fa-solid fa-robot"></i></span>
             </div>
-            <p>
-              Retrieval-augmented generation pipeline integrating text and image data for
-              context-aware, multi-source AI responses across heterogeneous document types.
-            </p>
-            <div class="project-tags" aria-label="Technologies">
-              <span>Python</span>
+            <h3>Multimodal RAG</h3>
+            <p>Retrieval-augmented generation pipeline integrating text and image data for context-aware, multi-source AI responses across heterogeneous document types.</p>
+            <div class="project-tags">
               <span>RAG</span>
+              <span>Multimodal</span>
               <span>LLM</span>
               <span>Hugging Face</span>
             </div>
-            <a href="#" class="project-link" aria-label="View Multimodal RAG on GitHub">
-              View on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a href="#" class="card-link" aria-label="View Multimodal RAG on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </article>
 
+          <!-- Hydroponics AI -->
           <article class="project-card reveal" role="listitem">
-            <div class="project-header">
-              <span class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-chart-line"></i>
-              </span>
-              <h3>Graph Methods for Stock Forecasting</h3>
+            <div class="card-top">
+              <span class="category-label iot">IoT / AI</span>
+              <span class="card-icon"><i class="fa-solid fa-seedling"></i></span>
             </div>
-            <p>
-              Modeled NEPSE stock data using Graph Neural Networks to identify inter-stock
-              relationships and improve forecasting over traditional time-series approaches.
-              Published in JONC Vol 1, 2025.
-            </p>
-            <div class="project-tags" aria-label="Technologies">
-              <span>Python</span>
-              <span>GNN</span>
-              <span>PyTorch</span>
-              <span>Finance</span>
-            </div>
-            <a href="#" class="project-link" aria-label="View Stock Forecasting project on GitHub">
-              View on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card reveal" role="listitem">
-            <div class="project-header">
-              <span class="project-icon" aria-hidden="true">
-                <i class="fa-solid fa-seedling"></i>
-              </span>
-              <h3>Hydroponics AI</h3>
-            </div>
-            <p>
-              Smart NFT Hydroponics system with IoT sensors for real-time monitoring of nutrient
-              levels, water flow, and environment. Reinforcement Learning agents adaptively
-              optimize growth parameters for improved crop yield and resource efficiency.
-            </p>
-            <div class="project-tags" aria-label="Technologies">
-              <span>Python</span>
+            <h3>Hydroponics AI</h3>
+            <p>Smart NFT hydroponics system with IoT sensors for real-time monitoring of nutrient levels, water flow, and environment. Reinforcement Learning agents adaptively optimise crop yield.</p>
+            <div class="project-tags">
               <span>IoT</span>
               <span>Reinforcement Learning</span>
               <span>Sensors</span>
+              <span>Embedded AI</span>
             </div>
-            <a href="#" class="project-link" aria-label="View Hydroponics AI on GitHub">
-              View on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a href="#" class="card-link" aria-label="View Hydroponics AI on GitHub">GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESEARCH & EDUCATION (side by side) ===== -->
+    <section id="research" class="section research-edu" aria-labelledby="research-title">
+      <div class="container">
+        <div class="re-grid">
+
+          <!-- LEFT: Research -->
+          <div class="re-left">
+            <p class="section-label reveal">Publications &amp; Research</p>
+            <h2 id="research-title" class="section-title reveal">Research Work</h2>
+
+            <div class="research-list">
+
+              <div class="research-item reveal">
+                <div class="research-meta">
+                  <span class="research-badge published">Published</span>
+                  <span class="research-year">JONC Vol 1, 2025</span>
+                </div>
+                <h3>Exploring Graph Methods for Stock Market Forecasting</h3>
+                <p>Applied Graph Neural Networks to model relationships between listed companies in the NEPSE stock exchange. Demonstrated that graph-structured representations capture inter-stock correlations that traditional time-series models miss, achieving improved forecasting accuracy.</p>
+                <div class="research-tags">
+                  <span>GNN</span><span>NEPSE</span><span>Forecasting</span><span>Graph Learning</span>
+                </div>
+              </div>
+
+              <div class="research-item reveal">
+                <div class="research-meta">
+                  <span class="research-badge review">Under Submission</span>
+                  <span class="research-year">2024–2025</span>
+                </div>
+                <h3>Nepali Script OCR via Few-Shot Learning</h3>
+                <p>Addressed the critical data scarcity problem in Nepali script recognition by adapting few-shot learning frameworks for OCR. Aims to preserve Nepal's script heritage and enable downstream NLP applications in a deeply low-resource setting.</p>
+                <div class="research-tags">
+                  <span>OCR</span><span>Few-Shot</span><span>Low-Resource NLP</span>
+                </div>
+              </div>
+
+              <div class="research-item reveal">
+                <div class="research-meta">
+                  <span class="research-badge progress">In Progress</span>
+                  <span class="research-year">2025</span>
+                </div>
+                <h3>Multimodal RAG for Heterogeneous Documents</h3>
+                <p>Ongoing work on retrieval-augmented generation pipelines that jointly index and retrieve from text and image modalities. Explores cross-modal alignment strategies for real-world document understanding tasks.</p>
+                <div class="research-tags">
+                  <span>RAG</span><span>Multimodal</span><span>Information Retrieval</span>
+                </div>
+              </div>
+
+              <div class="research-interests reveal">
+                <h3 class="interests-title">Research Interests</h3>
+                <div class="interests-chips">
+                  <span>Graph Neural Networks</span>
+                  <span>Low-Resource NLP</span>
+                  <span>Multimodal AI</span>
+                  <span>Retrieval-Augmented Generation</span>
+                  <span>Computer Vision</span>
+                  <span>AI for Social Good</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: Education -->
+          <div class="re-right">
+            <p class="section-label reveal">Background</p>
+            <h2 class="section-title reveal" aria-label="Education">Education</h2>
+
+            <div class="edu-list">
+              <div class="edu-card reveal">
+                <div class="edu-badge"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="edu-info">
+                  <span class="edu-years">2022 — Present</span>
+                  <h3>Bachelor of Technology<br />in Artificial Intelligence</h3>
+                  <p class="edu-inst">Kathmandu University</p>
+                  <p class="edu-note">Focus: Machine Learning, Computer Vision, NLP, Graph Learning</p>
+                </div>
+              </div>
+
+              <div class="edu-card reveal">
+                <div class="edu-badge"><i class="fa-solid fa-book"></i></div>
+                <div class="edu-info">
+                  <span class="edu-years">2020 — 2022</span>
+                  <h3>+2 Science</h3>
+                  <p class="edu-inst">Kathmandu University High School</p>
+                  <p class="edu-note">Pre-university science stream with emphasis on mathematics and physics</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEADERSHIP & EXPERIENCE ===== -->
+    <section id="leadership" class="section leadership" aria-labelledby="leadership-title">
+      <div class="container">
+        <p class="section-label reveal">Leadership</p>
+        <h2 id="leadership-title" class="section-title reveal">Experience &amp; Roles</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="tl-header">
+                <div>
+                  <h3>Coordinator &amp; Mentor</h3>
+                  <p class="tl-org">Kathmandu University AI Club</p>
+                </div>
+                <span class="tl-period">2025 — Present</span>
+              </div>
+              <ul class="tl-bullets">
+                <li>Lead and manage AI competitions including ideathons and hackathons</li>
+                <li>Mentor participants and junior club members on ML/AI projects</li>
+                <li>Coordinate workshops and speaker sessions on emerging AI topics</li>
+                <li>Secure sponsorships and institutional partnerships to expand the club's reach</li>
+                <li>Organised Robo Soccer 2024 — a flagship robotics competition for the university</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="tl-header">
+                <div>
+                  <h3>Executive Member</h3>
+                  <p class="tl-org">Kathmandu University AI Club</p>
+                </div>
+                <span class="tl-period">2023 — 2024</span>
+              </div>
+              <ul class="tl-bullets">
+                <li>Supported club operations and event logistics for AI-focused activities</li>
+                <li>Contributed to organising workshops and community outreach programmes</li>
+                <li>Assisted in coordinating inter-university AI competitions and seminars</li>
+              </ul>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -295,55 +503,32 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="container">
+        <p class="section-label reveal">Contact</p>
         <h2 id="contact-title" class="section-title reveal">Get in Touch</h2>
+        <p class="contact-intro reveal">Open to AI research collaborations, project discussions, and mentoring opportunities.</p>
+
         <div class="contact-grid reveal">
 
+          <!-- Form -->
           <!--
             FORMSPREE SETUP:
-            1. Sign up at https://formspree.io (free tier supports 50 submissions/month)
+            1. Sign up at https://formspree.io (free tier: 50 submissions/month)
             2. Create a new form and copy your endpoint URL
-            3. Replace the action value below with your own endpoint, e.g.:
+            3. Replace the action value below with your endpoint, e.g.:
                action="https://formspree.io/f/abcdefgh"
           -->
-          <form
-            id="contact-form"
-            class="contact-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-            novalidate
-            aria-label="Contact form"
-          >
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate aria-label="Contact form">
             <div class="form-field">
               <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your name"
-                required
-                autocomplete="name"
-              />
+              <input id="name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
             </div>
             <div class="form-field">
               <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                required
-                autocomplete="email"
-              />
+              <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
             </div>
             <div class="form-field">
               <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Your message…"
-                required
-              ></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Your message…" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary" id="submit-btn">
               <i class="fa-regular fa-paper-plane"></i> Send Message
@@ -351,49 +536,37 @@
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
 
+          <!-- Aside -->
           <div class="contact-aside">
-            <h3>Reach me directly</h3>
-            <p class="contact-note">
-              Open to AI research collaborations, project discussions, and mentoring.
-            </p>
+            <h3>Direct Contact</h3>
             <div class="contact-links">
-              <a href="mailto:tuladharyajjyu.2004@gmail.com" class="contact-link">
-                <span class="brand-icon-wrap brand-gmail" aria-hidden="true">
-                  <!-- Gmail SVG wordmark envelope -->
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none">
-                    <path d="M2 6.5C2 5.67 2.67 5 3.5 5h17c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-17C2.67 19 2 18.33 2 17.5v-11Z" fill="#fff" stroke="#ddd5c8"/>
-                    <path d="M2 6.5L12 13.5l10-7" stroke="#EA4335" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M2 6.5l4.5 4" stroke="#34A853" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M21.5 6.5l-4.5 4" stroke="#FBBC05" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M6.5 10.5L2 17.5" stroke="#4285F4" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M17.5 10.5L22 17.5" stroke="#34A853" stroke-width="1.4" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <span>tuladharyajjyu.2004@gmail.com</span>
+              <a href="mailto:tuladharyajjyu.2004@gmail.com" class="contact-link" id="contact-email-link">
+                <span class="clink-icon gmail-icon"><i class="fa-solid fa-envelope"></i></span>
+                <div class="clink-text">
+                  <span class="clink-label">Email</span>
+                  <span class="clink-value">tuladharyajjyu.2004@gmail.com</span>
+                </div>
               </a>
-              <a
-                href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/"
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-                aria-label="LinkedIn profile (opens in new tab)"
-              >
-                <span class="brand-icon-wrap brand-linkedin" aria-hidden="true">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </span>
-                <span>linkedin.com/in/yajjyu-tuladhar</span>
+              <a href="tel:+9779841261668" class="contact-link" id="contact-phone-link">
+                <span class="clink-icon phone-icon"><i class="fa-solid fa-phone"></i></span>
+                <div class="clink-text">
+                  <span class="clink-label">Phone</span>
+                  <span class="clink-value">+977-9841261668</span>
+                </div>
               </a>
-              <a
-                href="https://github.com/YAzz303"
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-                aria-label="GitHub profile (opens in new tab)"
-              >
-                <span class="brand-icon-wrap brand-github" aria-hidden="true">
-                  <i class="fa-brands fa-github"></i>
-                </span>
-                <span>github.com/YAzz303</span>
+              <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" target="_blank" rel="noopener" class="contact-link" aria-label="LinkedIn profile (opens in new tab)" id="contact-linkedin-link">
+                <span class="clink-icon linkedin-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                <div class="clink-text">
+                  <span class="clink-label">LinkedIn</span>
+                  <span class="clink-value">yajjyu-tuladhar</span>
+                </div>
+              </a>
+              <a href="https://github.com/YAzz303" target="_blank" rel="noopener" class="contact-link" aria-label="GitHub profile (opens in new tab)" id="contact-github-link">
+                <span class="clink-icon github-icon"><i class="fa-brands fa-github"></i></span>
+                <div class="clink-text">
+                  <span class="clink-label">GitHub</span>
+                  <span class="clink-value">YAzz303</span>
+                </div>
               </a>
             </div>
           </div>
@@ -404,10 +577,16 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer" role="contentinfo">
-      <div class="container">
-        <p>© <span id="year"></span> Yajjyu Tuladhar</p>
+      <div class="container footer-inner">
+        <p class="footer-name">Yajjyu Tuladhar</p>
+        <p class="footer-copy">© <span id="year"></span> · Kathmandu, Nepal</p>
+        <div class="footer-links">
+          <a href="https://github.com/YAzz303" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/yajjyu-tuladhar-8ba2a5252/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:tuladharyajjyu.2004@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
       </div>
     </footer>
 
   </body>
-</html>    
+</html>
